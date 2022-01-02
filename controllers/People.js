@@ -17,8 +17,8 @@ exports.AddPerson = async (req, res) => {
 
 exports.GetPeople = async (res, req) => {
 	try {
-		const peoples = await PeopleSchema.find();
-		res.status(200).send({ msg: 'list of people', peoples });
+		const PeopleCollection = await PeopleSchema.find();
+		res.status(200).send({ msg: 'list of people', PeopleCollection });
 	} catch (error) {
 		res.status(500).send('could not find people');
 	}
