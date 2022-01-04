@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Card } from 'react-bootstrap';
+
 function PersonDetails() {
-	const person = useSelector((state) => state.PeopleReducer.person);
+	const person = useSelector((state) => state.PeopleReducer.Person);
+
 	return (
 		<Card>
 			<Card.Body>
@@ -11,7 +13,7 @@ function PersonDetails() {
 				<Card.Title>{person.email}</Card.Title>
 				<Card.Text>{person.favouriteFood}</Card.Text>
 			</Card.Body>
-		</Card>
+		</Card> 
 	);
 }
 

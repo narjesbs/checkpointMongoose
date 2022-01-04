@@ -15,7 +15,7 @@ function App() {
 				<Route
 					path='/People/:id'
 					element={<PersonDetails></PersonDetails>}
-				></Route>
+				></Route> 
 				<Route path='/Edit/:id' element={<AddPerson></AddPerson>}></Route>
 			</Routes>
 		</div>

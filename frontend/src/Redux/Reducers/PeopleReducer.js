@@ -20,7 +20,7 @@ const PeopleReducer = (state = initialState, action) => {
 		case GET_PERSON:
 			return {
 				...state,
-				Person: action.payload.PeopleCollection,
+				Person: action.payload.foundPerson,
 			};
 		case TOGGLE_TRUE:
 			return {

@@ -11,8 +11,10 @@ function AddPerson() {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const person = useSelector((state) => state.PeopleReducer.person);
+
+	const person = useSelector((state) => state.PeopleReducer.Person);
 	const edit = useSelector((state) => state.PeopleReducer.edit);
+
 	useEffect(() => {
 		if (edit) {
 			setName(person.name);
@@ -26,6 +28,7 @@ function AddPerson() {
 			setFavouriteFood('');
 		}
 	}, []);
+
 	return (
 		<Form>
 			<Form.Group className='mb-3' controlId='formBasicName'>

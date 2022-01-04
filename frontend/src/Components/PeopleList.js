@@ -2,10 +2,10 @@ import React from 'react';
 import PersonCard from './PersonCard';
 import { useSelector } from 'react-redux';
 function PeopleList() {
-	const people = useSelector((state) => state.PeopleReducer.people);
+	const peoples = useSelector((state) => state.PeopleReducer.People);
 	return (
 		<div>
-			{people.map((person) => (
+			{peoples.map((person) => (
 				<PersonCard person={person} key={person._id} />
 			))}
 		</div>

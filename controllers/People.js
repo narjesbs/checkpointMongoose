@@ -11,20 +11,20 @@ exports.AddPerson = async (req, res) => {
 		await newPerson.save();
 		res.status(200).send({ msg: 'the person is added', newPerson });
 	} catch (error) {
-		res.status(500).send('could not add the person');
+		res.status(500).send({ msg: 'could not add the person', error });
 	}
 };
 
-exports.GetPeople = async (res, req) => {
+exports.GetPeople = async (req, res) => {
 	try {
 		const PeopleCollection = await PeopleSchema.find();
 		res.status(200).send({ msg: 'list of people', PeopleCollection });
 	} catch (error) {
-		res.status(500).send('could not find people');
+		res.status(500).send({ msg: 'could not get list of people' });
 	}
 };
 
-exports.GetPerson = async (res, req) => {
+exports.GetPerson = async (req, res) => {
 	const { id } = req.params;
 	try {
 		const foundPerson = await PeopleSchema.findById(id);
@@ -34,7 +34,7 @@ exports.GetPerson = async (res, req) => {
 	}
 };
 
-exports.DeletePerson = async (res, req) => {
+exports.DeletePerson = async (req, res) => {
 	const { id } = req.params;
 	try {
 		const deleted = await PeopleSchema.findByIdAndDelete(id);
@@ -44,7 +44,7 @@ exports.DeletePerson = async (res, req) => {
 	}
 };
 
-exports.UpdatePerson = async (res, req) => {
+exports.UpdatePerson = async (req, res) => {
 	const { id } = req.params;
 	try {
 		const updated = await PeopleSchema.findByIdAndUpdate(id, {
