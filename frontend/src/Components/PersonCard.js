@@ -11,35 +11,37 @@ import {
 function PersonCard({ person }) {
 	const dispatch = useDispatch();
 	return (
-		<Card style={{ width: '18rem' }}>
-			<Card.Body>
+		<Card className='person'>
+			<Card.Body className='person-info'>
 				<Card.Title>{person.name}</Card.Title>
 				<Card.Title>{person.email}</Card.Title>
-				<Button
-					variant='primary'
-					onClick={() => dispatch(deletePerson(person._id))}
-				>
-					Delete
-				</Button>
-				<Link to={`/edit/${person._id}`}>
+				<div className='btns'>
 					<Button
-						variant='primary'
-						onClick={() => {
-							dispatch(toggletrue());
-							dispatch(getPerson(person._id));
-						}}
+						className='btn'
+						onClick={() => dispatch(deletePerson(person._id))}
 					>
-						Edit
+						Delete
 					</Button>
-				</Link>
-				<Link to={`/peoples/${person._id}`}>
-					<Button
-						variant='primary'
-						onClick={() => dispatch(getPerson(person._id))}
-					>
-						Details
-					</Button>
-				</Link>
+					<Link style={{ textDecoration: 'none' }} to={`/edit/${person._id}`}>
+						<Button
+							className='btn'
+							onClick={() => {
+								dispatch(toggletrue());
+								dispatch(getPerson(person._id));
+							}}
+						>
+							Edit
+						</Button>
+					</Link>
+					<Link style={{ textDecoration: 'none' }} to={`/people/${person._id}`}>
+						<Button
+							className='btn'
+							onClick={() => dispatch(getPerson(person._id))}
+						>
+							Details
+						</Button>
+					</Link>
+				</div>
 			</Card.Body>
 		</Card>
 	);

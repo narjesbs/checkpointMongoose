@@ -1,13 +1,86 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background: #b16783;
+	color: hsl(209, 61%, 16%);
+	line-height: 1.5;
+	font-size: 0.875rem;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+	font-size: 3rem;
+	letter-spacing: 0.2rem;
+	text-transform: capitalize;
+	line-height: 1.25;
+	margin-bottom: 0.75rem;
+}
+p {
+	margin-bottom: 1.25rem;
+	color: hsl(208, 26%, 34%);
+	letter-spacing: 0.1rem;
+	line-height: 0.75;
+	font-size: 1rem;
+}
+main {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.section {
+	width: 90vw;
+	margin: 0 auto;
+	max-width: 1170px;
+}
+.peopleCont {
+	width: 90vw;
+	margin: 5rem 0;
+	max-width: 1170px;
+	background: #fff;
+	border-radius: 0.25rem;
+	padding: 1.5rem 2rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+h3 {
+	font-weight: normal;
+	text-transform: none;
+	margin-bottom: 2rem;
+}
+.person {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	column-gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	align-items: center;
+}
+.btns {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.btn {
+	color: #fff;
+	display: block;
+	width: 100%;
+	border-color: transparent;
+	background: #b16783;
+	margin: 2rem auto 0 auto;
+	text-transform: capitalize;
+	font-size: 1.2rem;
+	padding: 0.5rem 0;
+	letter-spacing: 0.1rem;
+	border-radius: 0.25rem;
+	outline: 1px solid rgba(242, 138, 178, 0.8);
+	cursor: pointer;
+}
+.btn:hover {
+	background: #b16783;
+	border-color: transparent;
+	outline: 1px solid rgba(242, 138, 178, 0.8);
+}
+.person-info {
+	letter-spacing: 0.1rem;
+	text-transform: capitalize;
+	line-height: 1.25;
+	margin-bottom: 0.75rem;
 }
